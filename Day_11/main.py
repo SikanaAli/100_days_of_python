@@ -19,9 +19,17 @@ def print_user_sum():
     print(f"\tYour Cards: {user_cards}, score: {sum(user_cards)}")
 
 
+def check_for_ace(chosen_cards):
+    if 11 in chosen_cards and sum(cards) > 21:
+        cards[cards.index(11)] = 1
+
+    return sum(chosen_cards)
+
+
+
 def compute_winner():
-    user_sum = sum(user_cards)
-    dealer_sum = sum(dealer_cards)
+    user_sum = check_for_ace(user_cards)
+    dealer_sum = check_for_ace(dealer_cards)
 
     if dealer_sum > 21:
         print_user_sum()
