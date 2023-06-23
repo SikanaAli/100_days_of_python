@@ -24,3 +24,5 @@ table.add_column("Type", p_type)
 table.align = "l"
 
 print(table)
+
+# lesson was looking at importing classes and using objects
